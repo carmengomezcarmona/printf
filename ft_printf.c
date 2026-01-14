@@ -6,7 +6,7 @@
 /*   By: carmgome <carmgome@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/18 19:06:47 by carmgome          #+#    #+#             */
-/*   Updated: 2026/01/12 16:00:02 by carmgome         ###   ########.fr       */
+/*   Updated: 2026/01/13 16:22:55 by carmgome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,17 @@ int ft_selector (va_list args, char format)
         count = ft_putstr_printf(va_arg(args, char *));
     else if (format == '%')
         count = ft_putchar_printf('%');
-    return(count);    
+	else if (format == 'd' || format == 'i')
+		count = ft_putnbr_printf(va_arg(args, int));
+	else if (format == 'u')
+    	count = ft_putunsigned_base(va_arg(args, unsigned int), "0123456789", 10);
+	else if (format == 'x')
+    	count = ft_putunsigned_base(va_arg(args, unsigned int), "0123456789abcdef", 16);
+	else if (format == 'X')
+    	count = ft_putunsigned_base(va_arg(args, unsigned int), "0123456789ABCDEF", 16);
+	else if (format == 'p')
+    	count = ft_putptr_printf(va_arg(args, unsigned long));
+	return(count);
 }
 
 int	ft_printf(char const *str, ...)
