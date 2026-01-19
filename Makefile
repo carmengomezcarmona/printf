@@ -10,14 +10,6 @@
 #                                                                              #
 # **************************************************************************** #
 
-El Makefile es como el "manual de instrucciones" para el terminal. En lugar de escribir un comando larguísimo para compilar, simplemente escribes make y él hace todo el trabajo sucio por ti.
-
-En 42, el Makefile del printf tiene que crear una librería (un archivo llamado libftprintf.a).
-
-Aquí tienes el Makefile perfecto y listo para usar. Crea un archivo nuevo llamado Makefile (con la M mayúscula y sin extensión) y pega esto:
-
-Makefile
-
 # Nombre de la librería final
 NAME = libftprintf.a
 

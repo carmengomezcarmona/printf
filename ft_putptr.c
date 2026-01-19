@@ -1,32 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcpy.c                                       :+:      :+:    :+:   */
+/*   ft_putptr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: carmgome <carmgome@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/17 15:33:50 by carmgome          #+#    #+#             */
-/*   Updated: 2025/12/12 12:23:36 by carmgome         ###   ########.fr       */
+/*   Created: 2026/01/19 11:14:01 by carmgome          #+#    #+#             */
+/*   Updated: 2026/01/19 11:15:01 by carmgome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_printf.h"
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
+int	ft_putptr_hex(unsigned long n)
 {
-	size_t	i;
+	int		len;
+	char	*base;
 
-	i = 0;
-	if (dstsize == 0)
-		return (ft_strlen(src));
-	while (src[i] != '\0' && i < (dstsize -1))
-	{
-		dst[i] = src[i];
-		i++;
-	}
-	if (dstsize != 0)
-	{
-		dst[i] = '\0';
-	}
-	return (ft_strlen(src));
+	len = 0;
+	base = "0123456789abcdef";
+	if (n >= 16)
+		len += ft_putptr_hex(n / 16);
+	len += ft_putchar_printf(base[n % 16]);
+	return (len);
+}
+
+int	ft_putptr_printf(unsigned long n)
+{
+	int	len;
+
+	len = 0;
+	if (n == 0)
+		return (ft_putstr_printf("(nil)"));
+	len += ft_putstr_printf("0x");
+	len += ft_putptr_hex(n);
+	return (len);
 }
