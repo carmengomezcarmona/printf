@@ -14,7 +14,7 @@
 NAME = libftprintf.a
 
 # Lista de tus archivos fuente
-SRCS = ft_printf.c ft_printf_utils.c
+SRCS = ft_printf.c ft_putchar_printf.c ft_putnbr_printf.c ft_putptr.c ft_putstr_printf.c ft_putunsigned_base.c
 
 # Convierte los .c en .o (archivos objeto)
 OBJS = $(SRCS:.c=.o)

@@ -21,7 +21,6 @@ int	ft_putstr_printf(char *s);
 int	ft_putnbr_printf(int n);
 int	ft_putunsigned_base(unsigned int n, char *base, int base_len);
 int	ft_putptr_printf(unsigned long n);
-int	ft_putptr_hex(unsigned long n);
 
 // Prototipos de las funciones principales
 int	ft_selector(va_list args, char format);
