@@ -6,7 +6,7 @@
 /*   By: carmgome <carmgome@student.42malaga.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/01/19 16:11:27 by carmgome          #+#    #+#             */
-/*   Updated: 2026/01/23 10:42:49 by carmgome         ###   ########.fr       */
+/*   Updated: 2026/01/26 11:52:21 by carmgome         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,3 @@ int	ft_putnbr_printf(int n)
 	len += ft_putchar_printf((num % 10) + '0');
 	return (len);
 }
-//esta funcion es para %d y para %i
-
